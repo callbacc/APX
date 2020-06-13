@@ -5,9 +5,9 @@ module.exports = async (client) => {
     try {
         await client.user.setPresence({ 
             activity: {
-                name: 'with discord.js v12' 
+                name: 'for .help' 
             }, 
-            status: 'idle' 
+            status: 'watching' 
         })
         const con = await db.connect();
         console.log("Arphenix is now up and running.");
