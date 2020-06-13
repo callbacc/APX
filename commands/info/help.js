@@ -10,7 +10,7 @@ module.exports = {
         let embed = new MessageEmbed()
             .setColor("#00FF00")
             .setDescription(`Fun: **daily, premium, rank, roulette, transfer**
-            Info: **help, remind**
+            Info: **help, remind, docs**
             Music: **loop, np, pause, play, queue, resume, skip, stop, volume**
             Rep: **rep, reps**
             Work: **coins, crime, work**`);
