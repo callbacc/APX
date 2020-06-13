@@ -5,9 +5,9 @@ module.exports = async (client) => {
     try {
         await client.user.setPresence({ 
             activity: {
-                name: 'for .help' 
+                name: '.help' 
             }, 
-            status: 'watching' 
+            status: 'listening' 
         })
         const con = await db.connect();
         console.log("Arphenix is now up and running.");
