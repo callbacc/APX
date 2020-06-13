@@ -14,7 +14,7 @@ config({ path: __dirname + "/.env" });
 const port = 3000;
 const app = express();
 app.get('/', (req, res) => {
-    res.send(`hi`);
+    res.send(`Application listeting on port ${port}!`);
 })
 
 app.listen(port, () => {
