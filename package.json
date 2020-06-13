@@ -1,0 +1,33 @@
+{
+  "name": "apx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-table": "0.0.9",
+    "btoa": "^1.2.1",
+    "discord.js": "github:discordjs/discord.js",
+    "discord.js-commando": "github:discordjs/Commando",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "expressjs": "^1.0.1",
+    "ffmpeg-static": "^4.2.2",
+    "fs": "0.0.1-security",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "node-fetch": "^2.6.0",
+    "node-opus": "^0.3.3",
+    "paypal-rest-sdk": "^1.8.1",
+    "simple-youtube-api": "^5.2.1",
+    "uuid": "^8.1.0",
+    "ytdl-core": "^2.1.5",
+    "ytdl-core-discord": "^1.2.0"
+  }
+}
