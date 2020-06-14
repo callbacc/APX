@@ -1,0 +1,5 @@
+{
+    "updateSuccess": "Settings succesfully updated.",
+    "errorOcurred": "There was an error, please try again later.",
+    "noPerm": "You do not meet the commands permissions."
+}
