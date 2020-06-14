@@ -2,10 +2,12 @@ const fs = require("fs");
 const moment = require("moment");
 const discord = require("discord.js");
 const fetch = require("node-fetch");
-const embed = new discord.RichEmbed();
+
+const db = require("../managers/Connection.js");
 
 require('moment-duration-format');
 module.exports = async (bot, utils, ytdl, config) => {
+  const con = await db.connect();
   fs.readdir("./commands/", (err, files) => {
     if (err) console.error(err);
     let jsfiles = files.filter(f => f.split(".").pop() === "js");
@@ -56,7 +58,18 @@ module.exports = async (bot, utils, ytdl, config) => {
       );
     }
   };
-
+  async function getGuildLanguage(guildid) {
+    const [ rows ] = await con.execute(`SELECT * FROM guildsettings WHERE id = '${guildid}'`);
+    var language = "";
+    if(rows.length === 0) {
+        language = "english";
+    } else if(rows[0].language === "english") {
+        language = "english";
+    } else {
+        language = "romanian";
+    }
+    return language;
+  }
   bot.handleVideo = async (video, message, vc, playlist = false) => {
     let queue = bot.queue.get(message.guild.id);
     let music = {
@@ -70,10 +83,6 @@ module.exports = async (bot, utils, ytdl, config) => {
       published: video.publishedAt,
       channelURL: `https://www.youtube.com/channel/${video.channel.id}`
     };
-    
-
-    
-
     if (!queue) {
       let queueConstruct = {
         textChannel: message.channel,
